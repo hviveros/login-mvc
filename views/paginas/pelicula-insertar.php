@@ -1,37 +1,19 @@
-<?php 
+<main role="main" class="container">
 
-require_once 'controllers/ClienteController.php';
-$objeto = new ClienteController();
-
-if (isset($_POST['insertar'])) {
-	$datos = array(
-		'nombre'   => $_POST['nombre'],
-		'email'    => $_POST['email'],
-	);
-	$objeto->insertarCliente($datos);
-}
-
-?>
-	<main role="main" class="container">
-
-		<div class="starter-template">
-			<h1>CRUD sencillo con PHP - MVC - PDO</h1>
-			<hr>
-			<div class="col-md-6 offset-3">
-				<form action="index.php?page=insertar" method="POST" name="registroForm" id="registroForm" class="text-left">
-					<div class="form-group">
-						<label for="nombre">Nombre</label>
-						<input type="text" id="nombre" name="nombre" class="form-control" aria-describedby="nombreHelp">
-						<small id="nombreHelp" class="form-text text-muted">Ingrese el nombre completo del cliente.</small>
-					</div>
-					<div class="form-group">
-						<label for="email">E-mail</label>
-						<input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp">
-						<small id="emailHelp" class="form-text text-muted">Ingrese el correo electronico del cliente.</small>
-					</div>
-					<button type="submit" name="insertar" class="btn btn-primary">Guardar registro</button>
-				</form>
-			</div>
+	<div class="starter-template">
+		<h1>Sistema Login con PHP - MVC - PDO</h1>
+		<h2>INSERTAR Pelicula</h2>
+		<hr>
+		<div class="col-md-6 offset-3">
+			<form action="" method="POST" name="registroForm" id="registroForm" class="text-left">
+				<div class="form-group">
+					<label for="pelicula">Pelicula</label>
+					<input type="text" id="pelicula" name="pelicula" class="form-control" aria-describedby="peliculaHelp">
+					<small id="peliculaHelp" class="form-text text-muted"></small>
+				</div>
+				<button type="submit" name="insertar" class="btn btn-primary">Guardar registro</button>
+			</form>
 		</div>
+	</div>
 
-	</main><!-- /.container -->
+</main><!-- /.container -->
