@@ -1,8 +1,9 @@
 <?php
 
-    // require_once 'controllers/ClienteController.php';
-    // $objeto = new ClienteController();
-    // $clientes = $objeto->obtenerClientes();
+    require_once 'controllers/PermisoController.php';
+    $objeto = new PermisoController();
+    $usuario_id = $_SESSION['id_usuario'];
+    $permisos = $objeto->obtenerPermisos($usuario_id);
 
 ?>
 
@@ -23,24 +24,26 @@
 					<tr>
 						<th scope="col">#id</th>
 						<th scope="col">Paginas</th>
+						<th scope="col">Nivel</th>
 						<th scope="col">acciones</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php
-						// if (!empty($clientes)) {
-						// 	foreach ($clientes as $r) { 
+						if (!empty($permisos)) {
+							foreach ($permisos as $r) { 
 					?>
 						<tr>
-							<th scope="row">1</th>
-							<td>Pelicula</td>
+							<th scope="row"><?=$r['id_permiso'];?></th>
+							<td><?=$r['pagina'];?></td>
+							<td><?=$r['nivel'];?></td>
 							<td>
-								<a href="?page=pelicula&action=insertar" class="btn btn-primary">Insertar</a>
-								<a href="?page=pelicula&action=editar&id=<?= $r['id']; ?>" class="btn btn-info">Editar</a>
-								<a href="?page=pelicula&action=eliminar&id=<?= $r['id']; ?>" class="btn btn-danger">Eliminar</a>
+								<a href="?page=ver&id=" type="a" class="btn btn-primary">Ver</a>
+								<a href="?page=editar&id=" type="a" class="btn btn-info">Editar</a>
+								<a href="?page=eliminar&id=" type="a" class="btn btn-danger">Eliminar</a>
 							</td>
 						</tr>
-					<?php // } } ?>
+					<?php } } ?>
 				</tbody>
 			</table>
 		</div>

@@ -9,9 +9,12 @@ class PermisoModel extends ModeloBase {
 		parent::__construct();
 	}
 
-	public function obtenerPermisos() {
+	public function obtenerPermisos($usuario_id) {
 		$db = new ModeloBase();
-		$query = "SELECT * FROM permiso ORDER BY id_permiso";
+		$query = "SELECT per.id_permiso, pag.pagina, per.nivel
+		FROM permiso AS per 
+		INNER JOIN pagina AS pag ON per.pagina_id = pag.id_pagina 
+		WHERE per.usuario_id = $usuario_id ORDER BY id_permiso";
 		$resultado = $db->obtenerTodos($query);
 		return $resultado;
 	}

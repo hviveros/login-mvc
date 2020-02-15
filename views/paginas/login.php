@@ -22,11 +22,11 @@
 					<?php
 						if (isset($_GET['mensaje'])) {
 							echo "<div class='alert alert-primary alert-dismissible fade show' role='alert'>
-									".$_GET['mensaje']."
-									<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-		    							<span aria-hidden='true'>&times;</span>
-									</button>
-								</div>";
+								".$_GET['mensaje']."
+								<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+	    							<span aria-hidden='true'>&times;</span>
+								</button>
+							</div>";
 						}
 					?>
 				</div>
