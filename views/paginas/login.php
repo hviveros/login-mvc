@@ -1,43 +1,49 @@
 <?php
+    require_once 'controllers/UsuarioController.php';
+    $usuario = new UsuarioController();
+    $usuario->login();
 
-    // require_once 'controllers/ClienteController.php';
-    // $objeto = new ClienteController();
-    // $clientes = $objeto->obtenerClientes();
-
+    if (isset($_POST['acceder'])) {
+        $datos = array(
+            'nick'    => $_POST['nick'],
+            'password' => md5($_POST['password'])
+        );
+        $respuesta = $usuario->accesoUsuario($datos);
+    }
 ?>
 
 	<main role="main" class="container">
 
 		<div class="starter-template">
 			<h1>Sistema Login con PHP - MVC - PDO</h1>
+			<hr>
 			<div class="row">
 				<div class="col-md-6 offset-3">
 					<?php
-						// if (isset($_GET['mensaje'])) {
-						// 	echo "<div class='alert alert-primary alert-dismissible fade show' role='alert'>
-						// 			".$_GET['mensaje']."
-						// 			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-		    			//				<span aria-hidden='true'>&times;</span>
-						// 			</button>
-						// 		</div>";
-						// }
+						if (isset($_GET['mensaje'])) {
+							echo "<div class='alert alert-primary alert-dismissible fade show' role='alert'>
+									".$_GET['mensaje']."
+									<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+		    							<span aria-hidden='true'>&times;</span>
+									</button>
+								</div>";
+						}
 					?>
 				</div>
 			</div>
-			<hr>
 			<div class="col-md-6 offset-3">
-				<form action="" method="POST" name="loginForm" id="loginForm" class="text-left">
+				<form action="index.php?page=login" method="POST" name="loginForm" id="loginForm" class="text-left">
 					<div class="form-group">
-						<label for="usuario">Usuario</label>
-						<input type="text" id="usuario" name="usuario" class="form-control" aria-describedby="usuarioHelp">
-						<small id="usuarioHelp" class="form-text text-muted">Ingrese el usuario.</small>
+						<label for="nick">Usuario</label>
+						<input type="text" id="nick" name="nick" class="form-control" aria-describedby="nickHelp">
+						<small id="nickHelp" class="form-text text-muted">Ingrese el usuario.</small>
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label>
 						<input type="password" id="password" name="password" class="form-control" aria-describedby="passwordHelp">
 						<small id="passwordHelp" class="form-text text-muted">Ingrese el password</small>
 					</div>
-					<button type="submit" name="login" class="btn btn-primary">Login</button>
+					<button type="submit" name="acceder" class="btn btn-primary">Login</button>
 				</form>
 			</div>
 		</div>
