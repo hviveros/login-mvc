@@ -18,16 +18,15 @@ class UsuarioController {
 		$respuesta = $usuario->accesoUsuario($datos['nick'], $datos['password']);
 		if ($respuesta != false) {
 			foreach ($respuesta as $r) {
-				$_SESSION['id_usuario'] = $r['id'];
-				$_SESSION['id_rol'] = $r['id_rol'];
+				$_SESSION['id_usuario'] = $r['id_usuario'];
+				$_SESSION['nombre'] = $r['nombre'];
+				$_SESSION['nick'] = $r['nick'];
 			}
-			if ($_SESSION['id_rol'] == 1) {
-				header('Location: index.php?page=dashboard');
-        die();
-			} else {
-				header('Location: index.php?page=blog');
-        die();
-			}
+			header('Location: index.php?page=inicio');
+        	die();
+		} else{
+			header('Location: index.php?page=login');
+        	die();
 		}
 	}
 

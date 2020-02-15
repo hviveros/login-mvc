@@ -5,13 +5,11 @@ require_once 'config.php';
 $page = $_GET['page'];
 
 if (!empty($page)) {
-	#http://crud-mvc/index.php?page=pelicula
+	#http://login-mvc/index.php?page=pelicula
 	$data = array(
-		'login' => array('model' => 'ClienteModel', 'view' => 'login', 'controller' => 'ClienteController'),
-		'inicio' => array('model' => 'ClienteModel', 'view' => 'inicio', 'controller' => 'ClienteController'),
-		'insertar' => array('model' => 'ClienteModel', 'view' => 'insertar', 'controller' => 'ClienteController'), #Crear un cliente
-		'editar' => array('model' => 'ClienteModel', 'view' => 'editar', 'controller' => 'ClienteController'), #Editar un cliente
-		'eliminar' => array('model' => 'ClienteModel', 'view' => 'eliminar', 'controller' => 'ClienteController'), 
+		'login' => array('model' => 'UsuarioModel', 'view' => 'login', 'controller' => 'UsuarioController'),
+		'inicio' => array('model' => 'UsuarioModel','view' => 'inicio', 'controller' => 'InicioController'), 
+		'pelicula' => array('model' => 'UsuarioModel','view' => 'pelicula', 'controller' => 'PeliculaController'), 
 	);
 
 	foreach($data as $key => $components) {
