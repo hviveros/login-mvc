@@ -16,7 +16,7 @@
 		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="index.php?page=inicio">Inicio <span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 			<ul class="navbar-nav text-right">
