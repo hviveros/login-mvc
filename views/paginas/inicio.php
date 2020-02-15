@@ -38,9 +38,26 @@
 							<td><?=$r['pagina'];?></td>
 							<td><?=$r['nivel'];?></td>
 							<td>
-								<a href="?page=ver&id=" type="a" class="btn btn-primary">Ver</a>
-								<a href="?page=editar&id=" type="a" class="btn btn-info">Editar</a>
-								<a href="?page=eliminar&id=" type="a" class="btn btn-danger">Eliminar</a>
+								<?php 
+									if ($r['nivel'] > 0) {
+								?>
+									<a href="?page=insertar&id=" class="btn btn-secondary">Lista</a>
+								<?php 
+									}
+
+									if ($r['nivel'] > 1) {
+								?>
+									<a href="?page=insertar&id=" class="btn btn-primary">Insertar</a>
+									<a href="?page=editar&id=" class="btn btn-info">Editar</a>
+								<?php 
+									}
+
+									if ($r['nivel'] > 2) {
+								?>
+									<a href="?page=eliminar&id=" class="btn btn-danger">Eliminar</a>
+								<?php 
+									}
+								?>
 							</td>
 						</tr>
 					<?php } } ?>
