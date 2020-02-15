@@ -25,7 +25,7 @@ class UsuarioController {
 			header('Location: index.php?page=inicio');
         	die();
 		} else{
-			header('Location: index.php?page=login');
+			header('Location: index.php?page=login&mensaje=Usuario o Contraseña incorrecta');
         	die();
 		}
 	}
