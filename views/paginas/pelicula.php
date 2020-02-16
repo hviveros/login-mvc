@@ -1,3 +1,4 @@
+
 <main role="main" class="container">
 
 	<div class="starter-template">
@@ -18,8 +19,8 @@
 					<td>Forrest Gump</td>
 					<td>
 						<a href="?page=pelicula&action=insertar" class="btn btn-primary">Insertar</a>
-						<a href="?page=pelicula&action=editar&id=<?= $r['id']; ?>" type="a" class="btn btn-info">Editar</a>
-						<a href="?page=pelicula&action=eliminar&id=<?= $r['id']; ?>" type="a" class="btn btn-danger">Eliminar</a>
+						<a href="?page=pelicula&action=editar&id=" class="btn btn-info">Editar</a>
+						<a href="?page=pelicula&action=eliminar&id=" class="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>
 			</tbody>

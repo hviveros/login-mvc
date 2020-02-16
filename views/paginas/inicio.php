@@ -15,9 +15,7 @@
 		<table class="table table-bordered">
 			<p>
 				<ul class="list-unstyled">
-					<li>#id: <?php echo $_SESSION['id_usuario']; ?></li>
-					<li>Nombre: <?php echo $_SESSION['nombre']; ?></li>
-					<li>Usuario: <?php echo $_SESSION['nick']; ?></li>
+					<li>Bienvenido: <?php echo $_SESSION['nombre']; ?> (<?php echo $_SESSION['nick']; ?>)</li>
 				</ul>
 			</p>
 			<thead class="thead-dark">

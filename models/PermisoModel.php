@@ -19,9 +19,19 @@ class PermisoModel extends ModeloBase {
 		return $resultado;
 	}
 
-	public function obtenerPermiso($id) {
+	public function obtenerPermisoId($id_permiso) {
 		$db = new ModeloBase();
 		$query = "SELECT * FROM permiso WHERE id_permiso = '".$id."'";
+		$resultado = $db->obtenerTodos($query);
+		return $resultado;
+	}
+
+	public function concederPermiso($usuario_id, $pagina) {
+		$db = new ModeloBase();
+		$query = "SELECT per.nivel
+		FROM permiso AS per 
+		INNER JOIN pagina AS pag ON per.pagina_id = pag.id_pagina 
+		WHERE per.usuario_id = $usuario_id AND pag.pagina = '".$pagina."'";
 		$resultado = $db->obtenerTodos($query);
 		return $resultado;
 	}

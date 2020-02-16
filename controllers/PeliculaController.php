@@ -1,16 +1,25 @@
 <?php
 
-//no hace falta conectar con algun Modelo, ya que no tendra CRUD de peliculas
+//no hace falta conectar con algun Modelo, ya que no tendrá CRUD de peliculas
 //require_once 'models/PeliculaModel.php';
+
+require_once 'controllers/PermisoController.php';
+$objeto = new PermisoController();
+session_start();
+$usuario_id = $_SESSION['id_usuario'];
+$pagina = $_GET['page'];
+$permiso = $objeto->concederPermiso($usuario_id, $pagina);
 
 class PeliculaController {
 
 	#estableciendo las vistas
 	public function pelicula() {
-        require_once('./views/includes/cabecera.php');
-        require_once('./views/includes/navbar.php');
-        require_once('./views/paginas/pelicula.php');
-        require_once('./views/includes/pie.php');
+        if ($permiso > 0) {
+            require_once('./views/includes/cabecera.php');
+            require_once('./views/includes/navbar.php');
+            require_once('./views/paginas/pelicula.php');
+            require_once('./views/includes/pie.php');
+        }
 	}
 
 	public function insertar() {

@@ -9,11 +9,14 @@ class PermisoController {
 		return $permisos->obtenerPermisos($usuario_id);
 	}
 
-	public function obtenerPermiso($id) {
-		$Permiso = new PermisoModel();
-		return $cliente->obtenerCliente($id);
+	public function obtenerPermisoId($id) {
+		$permiso = new PermisoModel();
+		return $permiso->obtenerPermiso($id);
 	}
 
-
+	public function concederPermiso($usuario_id, $pagina) {
+		$permiso = new PermisoModel();
+		return $permiso->concederPermiso($usuario_id, $pagina);
+	}
 
 }
