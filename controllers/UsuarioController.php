@@ -21,6 +21,7 @@ class UsuarioController {
 				$_SESSION['id_usuario'] = $r['id_usuario'];
 				$_SESSION['nombre'] = $r['nombre'];
 				$_SESSION['nick'] = $r['nick'];
+				$_SESSION['login'] = 'ok';
 			}
 			header('Location: index.php?page=inicio');
         	die();
