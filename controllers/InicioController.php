@@ -18,4 +18,10 @@ class InicioController {
 		}
 	}
 
+	public function error() {
+        require_once('./views/includes/cabecera.php');
+        require_once('./views/paginas/error.php');
+        require_once('./views/includes/pie.php');
+	}
+
 }
