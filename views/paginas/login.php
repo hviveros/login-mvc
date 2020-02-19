@@ -15,7 +15,7 @@
 	<main role="main" class="container">
 
 		<div class="starter-template">
-			<h1>Sistema Login con PHP - MVC - PDO</h1>
+			<h1>Sistema Acceso con PHP - MVC - PDO</h1>
 			<hr>
 			<div class="row">
 				<div class="col-md-6 offset-3">
