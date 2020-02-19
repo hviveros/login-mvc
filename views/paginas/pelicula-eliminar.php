@@ -9,7 +9,7 @@
 				<input type="hidden" name="id" value="">
 				<div class="form-group">
 					<label for="pelicula">Pelicula</label>
-					<input type="text" id="pelicula" name="pelicula" class="form-control" aria-describedby="peliculaHelp" value="" disabled>
+					<input type="text" id="pelicula" name="pelicula" class="form-control" aria-describedby="peliculaHelp" value="Forrest Gump" disabled>
 				</div>
 				<button type="submit" name="eliminar" class="btn btn-danger">Eliminar registro</button>
 			</form>
