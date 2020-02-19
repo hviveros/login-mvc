@@ -13,9 +13,13 @@ if ( isset($_SESSION['id_usuario']) && $_SESSION['login'] == 'ok') {
 	class PeliculaController extends PermisoController {
 
 		public function obtenerNivel(){
+			//para obtener el nivel buscamos el id del usuario
 			$usuario_id = $_SESSION['id_usuario'];
-	        $pagina = $_GET['page'];
-	        $nivel = $this->obtenerNivelPermiso($usuario_id, $pagina);
+	        //para obtener el nivel solo buscar 'pelicula' sin el guión ej. [pelicula-insertar]
+	        $page = $_GET['page'];
+	        //para usar el metodo obtnerNivel, solo nos interesa la palabra antes del guión de la variable 'page'
+	        $pagina = explode('-', $page);
+	        $nivel = $this->obtenerNivelPermiso($usuario_id, $pagina[0]);
 	        return $nivel;
 		}
 	       	
@@ -33,6 +37,18 @@ if ( isset($_SESSION['id_usuario']) && $_SESSION['login'] == 'ok') {
 	        }
 		}
 
+		public function peliculaDetalle() {
+			$nivelAcceso = $this->obtenerNivel();
+	        if ($nivelAcceso >= 1){
+	            require_once('./views/includes/cabecera.php');
+	            require_once('./views/includes/navbar.php');
+	            require_once('./views/paginas/pelicula-detalle.php');
+	            require_once('./views/includes/pie.php');
+	        }else{
+	            header('Location: index.php?page=error');
+	            die();
+	        }
+		}
 
 		public function peliculaInsertar() {
 			$nivelAcceso = $this->obtenerNivel();
@@ -47,18 +63,6 @@ if ( isset($_SESSION['id_usuario']) && $_SESSION['login'] == 'ok') {
 	        }
 		}
 
-		public function peliculaDetalle() {
-			$nivelAcceso = $this->obtenerNivel();
-	        if ($nivelAcceso >= 1){
-	            require_once('./views/includes/cabecera.php');
-	            require_once('./views/includes/navbar.php');
-	            require_once('./views/paginas/pelicula-detalle.php');
-	            require_once('./views/includes/pie.php');
-	        }else{
-	            header('Location: index.php?page=error');
-	            die();
-	        }
-		}
 
 		public function peliculaEditar() {
 			$nivelAcceso = $this->obtenerNivel();
