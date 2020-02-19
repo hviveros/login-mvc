@@ -40,12 +40,17 @@ INSERT INTO `usuario` (`id_usuario`, `nombre`, `nick`, `password`) VALUES
 (4, 'Tormund Giantsbane', 'usuario4', '0ddd0fbf933b170eb6d90987a67d0a5d');
 
 INSERT INTO `pagina` (`id_pagina`, `pagina`) VALUES
-(1, 'libro'),
-(2, 'pelicula'),
+(1, 'pelicula'),
+(2, 'libro'),
 (3, 'musica');
 
+#niveles
+#   1   ver        X          X            X
+#   2   ver     insertar    editar         X
+#   3   ver     insertar    editar      eliminar
+
 INSERT INTO `permiso` (`id_permiso`, `usuario_id`,`pagina_id`,`nivel`) VALUES
-(1, 1, 1, 3), (2, 1, 2, 3), (3, 1, 3, 3),
-(4, 2, 1, 3), (5, 2, 2, 2), (6, 2, 3, 1),
-(7, 3, 1, 0), (8, 3, 2, 1), (9, 3, 3, 2),
-(10, 4, 1, 0), (11, 4, 2, 0), (12, 4, 3, 0);
+(1,     1,  1,  3), (2,     1,  2,  3), (3,     1,  3,  3),
+(4,     2,  1,  2), (5,     2,  2,  2), (6,     2,  3,  2),
+(7,     3,  1,  1), (8,     3,  2,  1), (9,     3,  3,  1),
+(10,    4,  1,  0), (11,    4,  2,  0), (12,    4,  3,  0);
