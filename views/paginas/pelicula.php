@@ -18,9 +18,9 @@
 					<th scope="row">1</th>
 					<td>Forrest Gump</td>
 					<td>
-						<a href="?page=pelicula&action=insertar" class="btn btn-primary">Insertar</a>
-						<a href="?page=pelicula&action=editar&id=" class="btn btn-info">Editar</a>
-						<a href="?page=pelicula&action=eliminar&id=" class="btn btn-danger">Eliminar</a>
+						<a href="?page=pelicula-detalle&id=1" class="btn btn-secondary">Detalle</a>
+						<a href="?page=pelicula-editar&id=1" class="btn btn-info">Editar</a>
+						<a href="?page=pelicula-eliminar&id=1" class="btn btn-danger">Eliminar</a>
 					</td>
 				</tr>
 			</tbody>
