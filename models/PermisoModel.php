@@ -11,7 +11,7 @@ class PermisoModel extends ModeloBase {
 
 	public function obtenerPermisos($usuario_id) {
 		$db = new ModeloBase();
-		$query = "SELECT pag.pagina, per.nivel
+		$query = "SELECT pag.id_pagina, pag.pagina, per.nivel
 		FROM permiso AS per 
 		INNER JOIN pagina AS pag ON per.pagina_id = pag.id_pagina 
 		WHERE per.usuario_id = $usuario_id ORDER BY id_permiso";
