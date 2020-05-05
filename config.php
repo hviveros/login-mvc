@@ -1,5 +1,5 @@
 <?php
 
-	define("NOMBRE_SISTEMA", "LOGIN MVC");
+	define("NOMBRE_SISTEMA", "CATALOGO");
 
 ?>
