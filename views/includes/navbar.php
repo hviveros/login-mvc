@@ -20,6 +20,7 @@
 				</li>
 			</ul>
 			<ul class="navbar-nav text-right">
+				<li class="nav-item"><a class="nav-link" href="#"><?php echo $_SESSION['nombre']; ?></a></li>
 				<li class="nav-item">
 					<form action="" method="POST" name="logoutForm" id="logoutForm">
 						<button type="submit" class="btn btn-link nav-link" name="salir">Cerrar sesión</button>
