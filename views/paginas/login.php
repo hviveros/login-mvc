@@ -21,12 +21,7 @@
 				<div class="col-md-6 offset-3">
 					<?php
 						if (isset($_GET['mensaje'])) {
-							echo "<div class='alert alert-primary alert-dismissible fade show' role='alert'>
-								".$_GET['mensaje']."
-								<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-	    							<span aria-hidden='true'>&times;</span>
-								</button>
-							</div>";
+							echo "<div class='alert alert-primary' role='alert'>".$_GET['mensaje']."</div>";
 						}
 					?>
 				</div>
