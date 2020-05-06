@@ -1,5 +1,5 @@
 <?php
 
-	define("NOMBRE_SISTEMA", "CATALOGO");
+	define("NOMBRE_SISTEMA", "Catálogo de Productos");
 
 ?>
