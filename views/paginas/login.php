@@ -15,7 +15,7 @@
 	<main role="main" class="container">
 
 		<div class="starter-template">
-			<h1>Catálogo de Productos</h1>
+			<h1 class="text-center">Catálogo de Productos</h1>
 			<hr>
 			<div class="row">
 				<div class="col-md-6 offset-3">
