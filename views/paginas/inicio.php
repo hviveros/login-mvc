@@ -1,60 +1,40 @@
 <?php
 
-    require_once 'controllers/PermisoController.php';
-    $objeto = new PermisoController();
-    $usuario_id = $_SESSION['id_usuario'];
-    $permisos = $objeto->obtenerPermisos($usuario_id);
+require_once 'controllers/PermisoController.php';
+$objeto = new PermisoController();
+$usuario_id = $_SESSION['id_usuario'];
+$permisos = $objeto->obtenerPermisos($usuario_id);
 
 ?>
 
 <main role="main" class="container">
-
-	<div class="starter-template">
-		<h1>Catálogo de Productos</h1>
-		<hr>
-		<table class="table table-bordered">
-			<p>
-				<ul class="list-unstyled">
-					<li>Bienvenido: <?php echo $_SESSION['nombre']; ?> (<?php echo $_SESSION['nick']; ?>)</li>
-				</ul>
-			</p>
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Contenidos</th>
-					<th scope="col">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php
-					if (!empty($permisos)) {
-						foreach ($permisos as $r) { 
-
-							//si el nivel es 0, no muestra la página
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="card">
+				<div class="card-header">Menú</div>
+				<ul class="list-group list-group-flush">
+					<?php
+						if (!empty($permisos)) {
+							foreach ($permisos as $r) {
+							//si el nivel es 0, no muestra el contenido
 							if ($r['nivel'] > 0) {
-				?>
-					<tr>							
-						<td><?php echo $r['contenido'];?></td>
-						<td>
-							<?php //al ser el nivel > 0, está habilitado como mínimo para ver la contenido ?>
-							<a href="?page=<?php echo $r['contenido'];?>" class="btn btn-secondary">Lista</a>
-							<?php
-								//al ser el nivel > 1, está habilitado para insertar/editar registros de la contenido
-								if ($r['nivel'] > 1) {
-							?>
-								<a href="?page=<?php echo $r['contenido'];?>-insertar" class="btn btn-primary">Insertar</a>
-								<a href="?page=<?php echo $r['contenido'];?>-editar" class="btn btn-info">Editar</a>
-							<?php 
-								}
-								//al ser el nivel > 2, está habilitado hasta para eliminar registros de la contenido
-								if ($r['nivel'] > 2) {
-							?>
-								<a href="?page=<?php echo $r['contenido'];?>-eliminar" class="btn btn-danger">Eliminar</a>
-							<?php } ?>
-						</td>
-					</tr>
-				<?php	} } } ?>
-			</tbody>
-		</table>
-	</div>
-
+					?>
+					<li class="list-group-item">
+						<a href="?page=<?php echo $r['contenido'];?>"><?=$r['contenido'];?></a>
+					</li>
+					<?php	} } } ?>
+				</ul>
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<div class="card">
+				<div class="card-header">Inicio</div>
+				<div class="card-body">
+					<h5 class="card-title">Catálogo de Productos</h5>
+					<p class="card-text">Registro de Productos para inventario</p>
+					<a href="#" class="btn btn-primary">Ver informe</a>
+				</div>
+			</div>
+		</div>
+	</div><!-- /.row -->
 </main><!-- /.container -->
