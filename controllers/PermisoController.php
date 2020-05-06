@@ -14,17 +14,12 @@ class PermisoController {
 		return $permiso->obtenerPermiso($id);
 	}
 
-	public function obtenerNivelPermiso($usuario_id, $pagina) {
+	public function obtenerNivelPermiso($usuario_id, $contenido) {
 		$permiso = new PermisoModel();
-		$nivel = $permiso->obtenerNivelPermiso($usuario_id, $pagina);
+		$nivel = $permiso->obtenerNivelPermiso($usuario_id, $contenido);
 		foreach ($nivel as $n ) {
 			return $n['nivel'];
 		}
 	}
-
-	public function obtenerC($a, $b){
-		$c = $a + $b;
-		return $c;
-    }
 
 }

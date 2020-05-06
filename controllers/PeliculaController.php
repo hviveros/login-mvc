@@ -18,8 +18,8 @@ if ( isset($_SESSION['id_usuario']) && $_SESSION['login'] == 'ok') {
 	        //para obtener el nivel solo buscar 'pelicula' sin el guión ej. [pelicula-insertar]
 	        $page = $_GET['page'];
 	        //para usar el metodo obtnerNivel, solo nos interesa la palabra antes del guión de la variable 'page'
-	        $pagina = explode('-', $page);
-	        $nivel = $this->obtenerNivelPermiso($usuario_id, $pagina[0]);
+	        $contenido = explode('-', $page);
+	        $nivel = $this->obtenerNivelPermiso($usuario_id, $contenido[0]);
 	        return $nivel;
 		}
 	       	

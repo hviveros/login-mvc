@@ -11,9 +11,9 @@ class PermisoModel extends ModeloBase {
 
 	public function obtenerPermisos($usuario_id) {
 		$db = new ModeloBase();
-		$query = "SELECT pag.id_pagina, pag.pagina, per.nivel
+		$query = "SELECT pag.id_contenido, pag.contenido, per.nivel
 		FROM permiso AS per 
-		INNER JOIN pagina AS pag ON per.pagina_id = pag.id_pagina 
+		INNER JOIN contenido AS pag ON per.contenido_id = pag.id_contenido 
 		WHERE per.usuario_id = $usuario_id ORDER BY id_permiso";
 		$resultado = $db->obtenerTodos($query);
 		return $resultado;
@@ -26,12 +26,12 @@ class PermisoModel extends ModeloBase {
 		return $resultado;
 	}
 
-	public function obtenerNivelPermiso($usuario_id, $pagina) {
+	public function obtenerNivelPermiso($usuario_id, $contenido) {
 		$db = new ModeloBase();
 		$query = "SELECT per.nivel
 		FROM permiso AS per 
-		INNER JOIN pagina AS pag ON per.pagina_id = pag.id_pagina 
-		WHERE per.usuario_id = $usuario_id AND pag.pagina = '".$pagina."'";
+		INNER JOIN contenido AS pag ON per.contenido_id = pag.id_contenido 
+		WHERE per.usuario_id = $usuario_id AND pag.contenido = '".$contenido."'";
 		$resultado = $db->obtenerTodos($query);
 		return $resultado;
 	}
