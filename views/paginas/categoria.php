@@ -43,7 +43,7 @@ $categorias = $objCategoria->obtenerCategorias();
 						<table class="table table-bordered">
 							<thead class="thead-dark">
 								<tr>
-									<th scope="col">#Id</th>
+									<th scope="col">#Id Categoría</th>
 									<th scope="col">Categoría</th>
 									<th scope="col">Acciones</th>
 								</tr>
