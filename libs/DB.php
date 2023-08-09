@@ -2,7 +2,7 @@
 
 class DB extends PDO {
 	private $hostname = 'localhost';
-	private $database = 'catalogo';
+	private $database = 'up_login_mvc';
 	private $username = 'root';
 	private $password = '';
 	private $pdo;

@@ -1,12 +1,12 @@
 /*
-Sistema Registro de Productos -  Catálogo
+Sistema Login de acceso
 */
 
-DROP DATABASE IF EXISTS catalogo;
+DROP DATABASE IF EXISTS up_login_mvc;
 
-CREATE DATABASE IF NOT EXISTS catalogo;
+CREATE DATABASE IF NOT EXISTS up_login_mvc;
 
-USE catalogo;
+USE up_login_mvc;
 
 /*tabla usuario*/
 CREATE TABLE usuario(
